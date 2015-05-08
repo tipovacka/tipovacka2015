@@ -1,1 +1,0 @@
-# tipovacka2015
