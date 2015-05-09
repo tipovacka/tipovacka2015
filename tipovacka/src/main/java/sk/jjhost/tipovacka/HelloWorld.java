@@ -1,4 +1,4 @@
-package com.mycompany.tipovacka;
+package sk.jjhost.tipovacka;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;

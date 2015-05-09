@@ -1,4 +1,4 @@
-package com.mycompany.tipovacka;
+package sk.jjhost.tipovacka;
 
 import org.testng.annotations.Test;
 
