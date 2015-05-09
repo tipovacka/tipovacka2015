@@ -1,74 +1,67 @@
 package sk.jjhost.tipovacka;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
+public
+@Model
+class HelloWorld {
 
-public @Model class HelloWorld
-{
-   private final String text = "Hello World!";
+	private String letters;
 
-   private String letters;
-   
-   private String numbers;
-   
-   private String email;
-   
-   public HelloWorld() {}
+	private String numbers;
 
-   @PostConstruct
-   public void initialize()
-   {
-      System.out.println(this.getClass().getSimpleName() + " was constructed");
-   }
+	private String email;
 
-   public String getText()
-   {
-      return text;
-   }
+	public HelloWorld() {
+	}
 
-   @NotNull
-   @NotEmpty
-   @Pattern(regexp = "[A-Za-z]*", message = "must contain only letters")
-   public String getLetters()
-   {
-      return letters;
-   }
+	@PostConstruct
+	public void initialize() {
+		System.out.println(this.getClass().getSimpleName() + " was constructed");
+	}
 
-   public void setLetters(String letters)
-   {
-      this.letters = letters;
-   }
+	public String getText() {
+		return text;
+	}
 
-   @NotNull
-   @NotEmpty
-   @Digits(fraction = 0, integer = 2)
-   public String getNumbers()
-   {
-      return numbers;
-   }
+	@NotNull
+	@NotEmpty
+	@Pattern(regexp = "[A-Za-z]*", message = "must contain only letters")
+	public String getLetters() {
+		return letters;
+	}
 
-   public void setNumbers(String numbers)
-   {
-      this.numbers = numbers;
-   }
+	public void setLetters(String letters) {
+		this.letters = letters;
+	}
 
-   @NotNull
-   @NotEmpty
-   @Email
-   public String getEmail()
-   {
-      return email;
-   }
+	@NotNull
+	@NotEmpty
+	@Digits(fraction = 0, integer = 2)
+	public String getNumbers() {
+		return numbers;
+	}
 
-   public void setEmail(String email)
-   {
-      this.email = email;
-   }
+	public void setNumbers(String numbers) {
+		this.numbers = numbers;
+	}
+
+	@NotNull
+	@NotEmpty
+	@Email
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 }
